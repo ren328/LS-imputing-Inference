@@ -11,7 +11,7 @@ from rpy2.robjects.conversion import localconverter
 ## Use proper function to load SNP matrix for batch b and batch c
 snpb="path"
 snpc="path"
-##Use proper function to load elements of \sigma^*
+##Use proper function to load elements of \Sigma^*
 sd="path"
 sdfinal=np.diag(sd)
 
