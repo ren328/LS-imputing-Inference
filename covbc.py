@@ -14,6 +14,7 @@ snpc="path"
 ##Use proper function to load elements of \Sigma^*
 sd="path"
 sdfinal=np.diag(sd)
+lambda1=1e-6
 
 pb=np.shape(snpb)[1]
 resb=[]
@@ -34,24 +35,23 @@ bxt3=np.matmul(resb3,snpb.T)
 
 
 LD=np.matmul(bxt3,bxt3.T)
+xxtb=np.matmul(bxt.T,bxt)
+b1=np.diag(xxtb)
 
-xxt=np.matmul(bxt.T,bxt)
-a1=np.diag(xxt)
-lambda1=1e-6
-a2=a1+lambda1
-np.fill_diagonal(xxt,a2)
+b2=b1+lambda1
+np.fill_diagonal(xxtb,b2)
 
 
-##n*n, first term
-xtinv1=np.linalg.inv(xxt)
-xtinv=np.matmul(xtinv1,bxt.T)
-print(xtinv)
 
-##first term times sigma
-v1=np.matmul(xtinv,sdfinal1)
-##first term times sigma * LD
+xtinvb1=np.linalg.inv(xxtb)
+xtinvb=np.matmul(xtinvb1,bxt.T)
+
+
+
+v1=np.matmul(xtinvb,sdfinal1)
+
 v2=np.matmul(v1,LD)
-## above*sigma
+
 v3=np.matmul(v2,sdfinal1)
 
 
@@ -67,17 +67,16 @@ resc1=np.diag(resc)
 
 cxt=np.matmul(resc1,snpc.T)
 
-xxt=np.matmul(cxt.T,cxt)
-a1=np.diag(xxt)
-lambda1=1e-6
-a2=a1+lambda1
-np.fill_diagonal(xxt,a2)
+xxtc=np.matmul(cxt.T,cxt)
+c1=np.diag(xxtc)
+c2=c1+lambda1
+np.fill_diagonal(xxtc,c2)
 
 
-xtinv1=np.linalg.inv(xxt)
-xtinv=np.matmul(cxt,xtinv1)
+xtinvc1=np.linalg.inv(xxtc)
+xtinvc=np.matmul(cxt,xtinvc1)
 
-v=np.matmul(v3,xtinv)
+v=np.matmul(v3,xtinvc)
 
 ##Use proper function to save the result
 np.save("path", v)
