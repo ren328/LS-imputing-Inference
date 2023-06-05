@@ -13,7 +13,7 @@ i=
 ##Use proper function to load SNP matrix
 snp="path"
 snp=np.array(snp)
-##Use proper function to load elements of \sigma^*
+##Use proper function to load elements of \Sigma^*
 sd="path"
 sdfinal=np.diag(sd)
 lam=1e-6
