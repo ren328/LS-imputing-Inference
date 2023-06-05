@@ -10,3 +10,6 @@ See varb.py
 
 ## Calculation of $`\text{Cov}(\hat{Y}_{(b)},\hat{Y}_{(c)}|X^*, X)`$
 See covbc.py
+
+## Calculation of $\text{Var}(\hat{Y}_{(b)}| X^*, X,W)$
+See varb_1.py
