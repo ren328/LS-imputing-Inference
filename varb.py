@@ -19,7 +19,6 @@ sdfinal=np.diag(sd)
 
 
 p=np.shape(snp)[1]
-##D,p*p
 res=[]
 res2=[]
 for j in range(p):
@@ -32,15 +31,22 @@ for j in range(p):
 
 res3=np.diag(res2)
 res1=np.diag(res)
-##DX',p*p * p*n
 cxt=np.matmul(res1,snp.T)
 cxt3=np.matmul(res3,snp.T)
 
 ##approximate LD matrix
 LD=np.matmul(cxt3,cxt3.T)
 
-##(DX')^+, n*p
-xtinv=np.linalg.pinv(cxt,rcond=math.sqrt(np.finfo(float).eps))
+#xtinv=np.linalg.pinv(cxt,rcond=math.sqrt(np.finfo(float).eps))
+
+xxt=np.matmul(cxt.T,cxt)
+a1=np.diag(xxt)
+a2=a1+lam
+np.fill_diagonal(xxt,a2)
+xxtinv=np.linalg.inv(xxt)
+xtinv=np.matmul(xxtinv,cxt.T)
+
+
 
 v1=np.matmul(xtinv,sdfinal)
 v2=np.matmul(v1,LD)
