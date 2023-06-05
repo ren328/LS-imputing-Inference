@@ -22,7 +22,7 @@ vary=np.diag(varb)
 vary1=np.diag(1/np.sqrt(vary))
 
 cp=np.matmul(vary1,varb)
-R=np.matmul(cp,vary1)
+rb=np.matmul(cp,vary1)
 
 
 p=snp.shape[1]
@@ -34,7 +34,7 @@ for j in range(p):
   cp=np.matmul(c.T,c)
   cp1=1/cp
   cp2=cp1*c.T*sigmab[j]
-  cp3=np.matmul(cp2,R)
+  cp3=np.matmul(cp2,rb)
   cp4=np.matmul(cp3,c)
   cp5=cp4*cp1
   res.append(cp5)
