@@ -5,6 +5,10 @@ To impute trait, please refer to https://github.com/ren328/LSimputing.
 ## LS-imputation-I
 See LS-imputation-I.R.
 
+
+## LS-imputation-Cp
+See LS-imputation-Cp.R.
+
 ## Calculation of $\text{Var}(\hat{Y}_{(b)}| X^*, X)$
 See varb.py
 
