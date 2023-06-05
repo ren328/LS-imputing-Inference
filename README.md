@@ -5,4 +5,4 @@ To impute trait, please refer to https://github.com/ren328/LSimputing.
 ## LS-imputation-I
 See LS-imputation-I.R.
 
-## Calculation of $Var(\hat{Y}_{(b)}| X^*, X)$
+## Calculation of $\text{Var}(\hat{Y}_{(b)}| X^*, X)$
