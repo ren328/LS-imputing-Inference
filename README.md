@@ -8,5 +8,5 @@ See LS-imputation-I.R.
 ## Calculation of $\text{Var}(\hat{Y}_{(b)}| X^*, X)$
 See varb.py
 
-## Calculation of $\text{Cov}(\hat{Y}_{(b)},\hat{Y}_{(c)}| X^*, X)$
+## Calculation of $\text{Cov}(\hat{Y}_{(b)}| X^*, X)$
 See covbc.py
