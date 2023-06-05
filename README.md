@@ -3,4 +3,4 @@ This is the code for Statistical inference with large-scale trait imputation, if
 To impute trait, please refer to https://github.com/ren328/LSimputing.
 
 ## LS-imputation-I
-See LS-imputatino-I.R.
+See LS-imputation-I.R.
