@@ -21,8 +21,8 @@ snp=np.array(snp)
 vary=np.diag(varb)
 vary1=np.diag(1/np.sqrt(vary))
 
-cp=np.matmul(vary1,varb)
-rb=np.matmul(cp,vary1)
+bp=np.matmul(vary1,varb)
+rb=np.matmul(bp,vary1)
 
 
 p=snp.shape[1]
