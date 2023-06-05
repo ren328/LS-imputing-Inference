@@ -16,7 +16,7 @@ snp=np.array(snp)
 ##Use proper function to load elements of \sigma^*
 sd="path"
 sdfinal=np.diag(sd)
-
+lam=1e-6
 
 p=np.shape(snp)[1]
 res=[]
