@@ -36,7 +36,7 @@ p1<-do.call(cbind,p)
 ##cauchy method
 tc=c()
 for(i in 1:nrow(p1)){
-  tc[i]=sum(1/9*tan((0.5-p1[i,])*pi))
+  tc[i]=sum(1/ncol(p1)*tan((0.5-p1[i,])*pi))
 }
 
 pcauchy=0.5-atan(tc)/pi
